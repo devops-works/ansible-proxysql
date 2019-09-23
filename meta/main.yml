@@ -10,7 +10,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - Xenial
-  categories:
+  galaxy_tags:
     - databases
 
 dependencies: []
