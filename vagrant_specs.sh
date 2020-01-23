@@ -14,17 +14,17 @@
 # vagrant ssh -c ./specs
 #
 if [ "x$1" == "x--install" ]; then
-  mv ~ubuntu/specs /usr/local/bin/specs
+  mv ~vagrant/specs /usr/local/bin/specs
   chmod 755 /usr/local/bin/specs
   sudo apt-get update
   sudo apt-get install -qqy git make python
-  su ubuntu -c 'git clone --depth 1 https://github.com/nickjj/rolespec'
-  cd ~ubuntu/rolespec && make install
-  su ubuntu -c 'rolespec -i ~/testdir'
-  su ubuntu -c "ln -s /vagrant/ ~/testdir/roles/$2"
-  su ubuntu -c "ln -s /vagrant/tests/$2/ ~/testdir/tests/"
-  # su ubuntu -c "git clone $3 ~/testdir/tests"
+  su vagrant -c 'git clone --depth 1 https://github.com/nickjj/rolespec'
+  cd ~vagrant/rolespec && make install
+  su vagrant -c 'rolespec -i ~/testdir'
+  su vagrant -c "ln -s /vagrant/ ~/testdir/roles/$2"
+  su vagrant -c "ln -s /vagrant/tests/$2/ ~/testdir/tests/"
+  # su vagrant -c "git clone $3 ~/testdir/tests"
   exit
 fi
 
-cd ~ubuntu/testdir && rolespec -r $(ls roles) "$*"
+cd ~vagrant/testdir && rolespec -r $(ls roles) "$*"

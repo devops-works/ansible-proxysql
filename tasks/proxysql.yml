@@ -54,3 +54,9 @@
     src: proxysql.logrotate.conf.j2
     dest: /etc/logrotate.d/proxysql
     mode: 0644
+
+- name: Adds proxysql.my.cnf
+  template:
+    src: proxysql.my.cnf.j2
+    dest: /etc/proxysql.my.cnf
+    mode: 0600
