@@ -19,3 +19,4 @@ assert_playbook_idempotent
 assert_tcp localhost 6032
 assert_tcp localhost 6033
 
+assert_in "$(sudo mysql --defaults-file=/etc/proxysql.my.cnf --execute="show tables;")" 'mysql_users'

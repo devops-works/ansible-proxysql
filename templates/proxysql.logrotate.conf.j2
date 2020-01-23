@@ -19,3 +19,15 @@
   notifempty
   create 0640 root root
 }
+
+/var/lib/proxysql/*.log {
+  missingok
+  daily
+  notifempty
+  compress
+  postrotate
+  /usr/bin/mysql --defaults-file=/etc/proxysql.my.cnf --execute="PROXYSQL FLUSH LOGS"
+  endscript
+  create 0600 root root
+  rotate 5
+}
