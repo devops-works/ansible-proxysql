@@ -39,10 +39,11 @@
   notify:
     - Load config from file to memory
 
-- name: Ensures proxysql is started
+- name: Ensures proxysql is started and enabled
   service:
     name: proxysql
     state: started
+    enabled: yes
 
 - name: Creates log dir
   file:
