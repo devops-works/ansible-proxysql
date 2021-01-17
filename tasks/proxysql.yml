@@ -6,7 +6,7 @@
 
 - name: Adds percona repositories
   apt_repository:
-    repo: 'deb http://repo.proxysql.com/ProxySQL/proxysql-1.4.x/{{ ansible_distribution_release }} ./'
+    repo: 'deb http://repo.proxysql.com/ProxySQL/proxysql-{{ proxysql_version }}.x/{{ ansible_distribution_release }} ./'
     state: present
 
 - name: Installs proxysql & python-mysqldb

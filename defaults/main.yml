@@ -45,3 +45,5 @@ proxysql_cluster_name: false
 proxysql_cluster_password: false
 
 proxysql_mysql_server_version: 5.5.30
+
+proxysql_version: 1.4
