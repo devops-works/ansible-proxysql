@@ -84,7 +84,7 @@ testinfra==3.2.0
 toml==0.10.0
 tree-format==0.1.2
 typed-ast==1.4.0
-urllib3==1.25.5
+urllib3==1.25.8
 virtualenv==16.7.5
 wcwidth==0.1.7
 websocket-client==0.56.0
